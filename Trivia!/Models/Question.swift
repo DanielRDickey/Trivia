@@ -20,9 +20,5 @@ struct Question: Codable {
     var difficulty: String
     var question: String
     var correct_answer: String
-    var incorrect_answers: [IncorrectAnswers]
-}
-
-struct IncorrectAnswers: Codable {
-    var incorrectAnswers: String
+    var incorrect_answers: [String]
 }

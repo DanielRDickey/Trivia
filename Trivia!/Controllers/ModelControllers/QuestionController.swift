@@ -9,11 +9,6 @@ import Foundation
 
 class QuestionController {
     
-    // MARK: - Properties
-    
-    let shared = QuestionController()
-    var questions: [Questions] = []
-    
     // MARK: - Call
     
     //Final URL = https://opentdb.com/api.php?amount=10&type=multiple
@@ -54,6 +49,24 @@ class QuestionController {
             
         }.resume()
         
+    }
+    
+   static func convertSpecialCharacters(input: String) -> String {
+        
+            var newString = input
+        
+            let characterDictionary = [
+                "&amp;" : "&",
+                "&lt;" : "<",
+                "&gt;" : ">",
+                "&quot;" : "\"",
+                "&apos;" : "'",
+                "&#039;" : "'"
+            ]
+            for (escapedCharacter, unescapedCharacter) in characterDictionary {
+                newString = newString.replacingOccurrences(of: escapedCharacter, with: unescapedCharacter, options: NSString.CompareOptions.literal, range: nil)
+            }
+            return newString
     }
     
 }//End of class

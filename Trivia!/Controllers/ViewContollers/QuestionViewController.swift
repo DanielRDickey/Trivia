@@ -85,16 +85,33 @@ class QuestionViewController: UIViewController {
             }
         }
     }
+    
+    func presentAlert(answer: String) {
+        
+        let correctAnswer = questions[questionNumber].correct_answer
+        let success = answer == correctAnswer
+        
+        let alertController = UIAlertController(title: success ? "Good Job!" : "Wrong Answer.", message: success ? "If you would like to play more, please click continue." : "The corrent answer is \(correctAnswer)", preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Done", style: .cancel)
+        let continueAction = UIAlertAction(title: "Continue", style: .default) { (_) in
+            self.setNextQuestion()
+        }
+        
+        alertController.addAction(doneAction)
+        alertController.addAction(continueAction)
+        
+        present(alertController, animated: true)
+    }
 
     // MARK: - Actions
     
     @IBAction func multipleChoiceButtonTapped(_ sender: Any) {
         
-        //Find out if answer is correct
+        guard let answer = (sender as AnyObject).titleLabel?.text else {return}
+        presentAlert(answer: answer)
         
-        //Present Alert Here
-        
-        setNextQuestion()
+//        setNextQuestion()
     }
-    
+
 }//End of class

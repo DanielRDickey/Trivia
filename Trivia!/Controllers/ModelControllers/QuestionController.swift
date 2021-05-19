@@ -12,13 +12,13 @@ class QuestionController {
     // MARK: - Properties
     
     let shared = QuestionController()
-//    var questions: [Questions] = []
+    var questions: [Questions] = []
     
     // MARK: - Call
     
     //Final URL = https://opentdb.com/api.php?amount=10&type=multiple
     
-    static func fetchQuestions(completion: @escaping (Result<Data, NetworkError>) -> Void)  {
+    static func fetchQuestions(completion: @escaping (Result<[Question], NetworkError>) -> Void)  {
         let baseURL = "https://opentdb.com/api.php"
         let amountQuery = URLQueryItem(name: "amount", value: "10")
         let typeQuery = URLQueryItem(name: "type", value: "multiple")
@@ -29,23 +29,30 @@ class QuestionController {
         guard let finalURL = components?.url else {return completion(.failure(.invalidURL))}
         print(finalURL)
         
-        var request = URLRequest(url: finalURL)
+        let request = URLRequest(url: finalURL)
         
-        URLSession.shared.dataTask(with: request) { data, _, error in
+        URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 return completion(.failure(.thrownError(error)))
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print("STATUS CODE: \(response.statusCode)")
             }
             
             guard let data = data else {return completion(.failure(.noData))}
             
             do {
-                let questions = try JSONDecoder()
+                let topLevelObject = try JSONDecoder().decode(Questions.self, from: data)
+                let questions = topLevelObject.questionList
+                
+                completion(.success(questions))
+                
             } catch {
                 return completion(.failure(.unableToDecode))
             }
             
         }.resume()
-        
         
     }
     

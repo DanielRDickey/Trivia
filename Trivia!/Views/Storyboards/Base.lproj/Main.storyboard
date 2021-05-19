@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bV-aD-eSz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9bV-aD-eSz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -94,7 +94,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="answerButton" destination="NEa-X2-X9T" id="Bdh-aC-8fb"/>
+                        <outlet property="answerButton1" destination="NEa-X2-X9T" id="Bdh-aC-8fb"/>
+                        <outlet property="answerButton2" destination="Slh-Q3-2uC" id="u3Z-fR-S2J"/>
+                        <outlet property="answerButton3" destination="LIQ-79-nn4" id="P1h-dq-M2c"/>
+                        <outlet property="answerButton4" destination="7x5-FO-Gal" id="WUN-Ss-91F"/>
                         <outlet property="categoryLabel" destination="T93-ns-OwL" id="Fux-Au-ugN"/>
                         <outlet property="difficultyLabel" destination="vbe-Nu-KpV" id="67H-s3-5la"/>
                         <outlet property="questionLabel" destination="dRm-9a-dx8" id="4CN-zv-4dX"/>

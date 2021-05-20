@@ -30,7 +30,6 @@ class QuestionViewController: UIViewController {
     
     var questions: [Question] = []
     var questionNumber = 0
-    var userScore = 0
     
     // MARK: - Functions
     
@@ -66,9 +65,6 @@ class QuestionViewController: UIViewController {
     func endGame() {
         //Add end Screen
         
-        questionNumber = 0
-        userScore = 0
-        setData()
     }
     
     func setData() {
@@ -95,10 +91,6 @@ class QuestionViewController: UIViewController {
         
         let correctAnswer = questions[questionNumber].correct_answer
         let success = answer == correctAnswer
-        
-        if success {
-            userScore += 1
-        }
         
         let fixedAnswer = QuestionController.convertSpecialCharacters(input: correctAnswer)
         

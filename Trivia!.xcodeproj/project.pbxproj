@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		615F6A122656C4FF00FBE79B /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615F6A112656C4FF00FBE79B /* Styleguide.swift */; };
+		615F6A152656CA6400FBE79B /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615F6A142656CA6400FBE79B /* Buttons.swift */; };
+		615F6A182656CED100FBE79B /* MainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615F6A172656CED100FBE79B /* MainLabel.swift */; };
+		615F6A1B2656CF9400FBE79B /* SubLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615F6A1A2656CF9400FBE79B /* SubLabel.swift */; };
 		A24C986A2655ACB900B1FD16 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24C98692655ACB900B1FD16 /* QuestionViewController.swift */; };
 		A2DE798E26558CC5003AFF86 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE798D26558CC5003AFF86 /* Question.swift */; };
 		BAD859802655819400B9FD2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD8597F2655819400B9FD2A /* AppDelegate.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		615F6A112656C4FF00FBE79B /* Styleguide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
+		615F6A142656CA6400FBE79B /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		615F6A172656CED100FBE79B /* MainLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLabel.swift; sourceTree = "<group>"; };
+		615F6A1A2656CF9400FBE79B /* SubLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLabel.swift; sourceTree = "<group>"; };
 		A24C98692655ACB900B1FD16 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		A2DE798D26558CC5003AFF86 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		BAD8597C2655819400B9FD2A /* Trivia!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trivia!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +55,10 @@
 			isa = PBXGroup;
 			children = (
 				BAD859A7265590AA00B9FD2A /* NetworkError.swift */,
+				615F6A112656C4FF00FBE79B /* Styleguide.swift */,
+				615F6A142656CA6400FBE79B /* Buttons.swift */,
+				615F6A172656CED100FBE79B /* MainLabel.swift */,
+				615F6A1A2656CF9400FBE79B /* SubLabel.swift */,
 			);
 			path = "Helper and Extension";
 			sourceTree = "<group>";
@@ -213,9 +225,13 @@
 				A2DE798E26558CC5003AFF86 /* Question.swift in Sources */,
 				BAD859A526558F2800B9FD2A /* QuestionController.swift in Sources */,
 				A24C986A2655ACB900B1FD16 /* QuestionViewController.swift in Sources */,
+				615F6A1B2656CF9400FBE79B /* SubLabel.swift in Sources */,
 				BAD859A8265590AA00B9FD2A /* NetworkError.swift in Sources */,
 				BAD859802655819400B9FD2A /* AppDelegate.swift in Sources */,
+				615F6A122656C4FF00FBE79B /* Styleguide.swift in Sources */,
+				615F6A182656CED100FBE79B /* MainLabel.swift in Sources */,
 				BAD859822655819400B9FD2A /* SceneDelegate.swift in Sources */,
+				615F6A152656CA6400FBE79B /* Buttons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

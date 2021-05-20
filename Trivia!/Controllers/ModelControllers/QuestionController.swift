@@ -64,7 +64,10 @@ class QuestionController {
                 "&#039;" : "'",
                 "&aecute;" : "á",
                 "&eecute;" : "é",
-                "&uuml;" : "ú"
+                "&uuml;" : "ú",
+                "&ldquo;" : "'",
+                "&rdquo;" : "'"
+                
             ]
             for (escapedCharacter, unescapedCharacter) in characterDictionary {
                 newString = newString.replacingOccurrences(of: escapedCharacter, with: unescapedCharacter, options: NSString.CompareOptions.literal, range: nil)

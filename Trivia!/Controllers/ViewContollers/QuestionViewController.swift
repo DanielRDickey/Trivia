@@ -25,6 +25,7 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
+        setupViews()
     }
     
     // MARK: - Properties
@@ -47,7 +48,7 @@ class QuestionViewController: UIViewController {
         let fixedQuestion = QuestionController.convertSpecialCharacters(input: questions[questionNumber].question)
         questionLabel.text = fixedQuestion
         categoryLabel.text = questions[questionNumber].category
-        difficultyLabel.text = questions[questionNumber].difficulty
+        difficultyLabel.text = questions[questionNumber].difficulty.firstUppercased
     
         setAnswers()
     }
@@ -67,30 +68,6 @@ class QuestionViewController: UIViewController {
         answerButton2.setTitle(fixedAnswers[1], for: .normal)
         answerButton3.setTitle(fixedAnswers[2], for: .normal)
         answerButton4.setTitle(fixedAnswers[3], for: .normal)
-        
-        updateButtonViews()
-    }
-    
-    func updateButtonViews() {
-        answerButton1.layer.borderWidth = 5.0
-        answerButton1.layer.borderColor = UIColor.black.cgColor
-        answerButton1.backgroundColor = UIColor.black
-        answerButton1.tintColor = UIColor.white
-        
-        answerButton2.layer.borderWidth = 5.0
-        answerButton2.layer.borderColor = UIColor.black.cgColor
-        answerButton2.backgroundColor = UIColor.black
-        answerButton2.tintColor = UIColor.white
-        
-        answerButton3.layer.borderWidth = 5.0
-        answerButton3.layer.borderColor = UIColor.black.cgColor
-        answerButton3.backgroundColor = UIColor.black
-        answerButton3.tintColor = UIColor.white
-        
-        answerButton4.layer.borderWidth = 5.0
-        answerButton4.layer.borderColor = UIColor.black.cgColor
-        answerButton4.backgroundColor = UIColor.black
-        answerButton4.tintColor = UIColor.white
     }
     
     func endGame() {
@@ -107,7 +84,7 @@ class QuestionViewController: UIViewController {
                     let fixedQuestion = QuestionController.convertSpecialCharacters(input: questions[self?.questionNumber ?? 0].question)
                     self?.questionLabel.text = fixedQuestion
                     self?.categoryLabel.text = questions[0].category
-                    self?.difficultyLabel.text = questions[0].difficulty
+                    self?.difficultyLabel.text = questions[0].difficulty.firstUppercased
                     self?.setAnswers()
                 }
                 
@@ -154,11 +131,15 @@ class QuestionViewController: UIViewController {
             self.updateProgressBar()
 
         }
-        
+
         alertController.addAction(doneAction)
         alertController.addAction(newGameAction)
         
         present(alertController, animated: true)
+    }
+    
+    func setupViews() {
+        view.backgroundColor = Colors.backgroundBlack
     }
 
     // MARK: - Actions
@@ -166,7 +147,6 @@ class QuestionViewController: UIViewController {
     @IBAction func multipleChoiceButtonTapped(_ sender: Any) {
         guard let answer = (sender as AnyObject).titleLabel?.text else {return}
         presentAlert(answer: answer)
-
     }
 
 }//End of class

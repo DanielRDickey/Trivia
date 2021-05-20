@@ -53,7 +53,7 @@ class QuestionViewController: UIViewController {
     }
     
     func updateProgressBar() {
-        progressBar.setProgress(Float(questionNumber) / Float(10), animated: true)
+        progressBar.setProgress(Float(questionNumber + 1) / Float(10), animated: true)
     }
     
     func setAnswers() {
@@ -148,9 +148,10 @@ class QuestionViewController: UIViewController {
         
         let doneAction = UIAlertAction(title: "Done", style: .cancel)
         let newGameAction = UIAlertAction(title: "Start A New Game", style: .default) { (_) in
-            self.setData()
             self.questionNumber = 0
+            self.setData()
             self.scores = 0
+            self.updateProgressBar()
         }
         
         

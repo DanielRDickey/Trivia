@@ -117,7 +117,6 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    
     func presentAlert(answer: String) {
         
         let correctAnswer = questions[questionNumber].correct_answer
@@ -125,8 +124,7 @@ class QuestionViewController: UIViewController {
         if success == true {
             scores += 1
         }
-        
-<
+
         let fixedAnswer = QuestionController.convertSpecialCharacters(input: correctAnswer)
         
         let alertController = UIAlertController(title: success ? "Good Job!" : "Wrong Answer.", message: success ? "If you would like to play more, please click continue." : "The corrent answer is \(fixedAnswer)", preferredStyle: .alert)
@@ -156,8 +154,6 @@ class QuestionViewController: UIViewController {
             self.updateProgressBar()
 
         }
-        
-        
         
         alertController.addAction(doneAction)
         alertController.addAction(newGameAction)

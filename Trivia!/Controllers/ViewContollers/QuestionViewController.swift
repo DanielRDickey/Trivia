@@ -47,7 +47,7 @@ class QuestionViewController: UIViewController {
         let fixedQuestion = QuestionController.convertSpecialCharacters(input: questions[questionNumber].question)
         questionLabel.text = fixedQuestion
         categoryLabel.text = questions[questionNumber].category
-        difficultyLabel.text = questions[questionNumber].difficulty
+        difficultyLabel.text = "Difficulty: \(questions[questionNumber].difficulty)"
     
         setAnswers()
     }
@@ -126,7 +126,6 @@ class QuestionViewController: UIViewController {
             scores += 1
         }
         
-<
         let fixedAnswer = QuestionController.convertSpecialCharacters(input: correctAnswer)
         
         let alertController = UIAlertController(title: success ? "Good Job!" : "Wrong Answer.", message: success ? "If you would like to play more, please click continue." : "The corrent answer is \(fixedAnswer)", preferredStyle: .alert)
@@ -156,8 +155,6 @@ class QuestionViewController: UIViewController {
             self.updateProgressBar()
 
         }
-        
-        
         
         alertController.addAction(doneAction)
         alertController.addAction(newGameAction)

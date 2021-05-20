@@ -126,6 +126,7 @@ class QuestionViewController: UIViewController {
             scores += 1
         }
         
+<
         let fixedAnswer = QuestionController.convertSpecialCharacters(input: correctAnswer)
         
         let alertController = UIAlertController(title: success ? "Good Job!" : "Wrong Answer.", message: success ? "If you would like to play more, please click continue." : "The corrent answer is \(fixedAnswer)", preferredStyle: .alert)
@@ -148,10 +149,12 @@ class QuestionViewController: UIViewController {
         
         let doneAction = UIAlertAction(title: "Done", style: .cancel)
         let newGameAction = UIAlertAction(title: "Start A New Game", style: .default) { (_) in
+
             self.questionNumber = 0
             self.setData()
             self.scores = 0
             self.updateProgressBar()
+
         }
         
         

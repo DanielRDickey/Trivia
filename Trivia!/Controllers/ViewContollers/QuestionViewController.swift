@@ -48,7 +48,8 @@ class QuestionViewController: UIViewController {
         let fixedQuestion = QuestionController.convertSpecialCharacters(input: questions[questionNumber].question)
         questionLabel.text = fixedQuestion
         categoryLabel.text = questions[questionNumber].category
-        difficultyLabel.text = questions[questionNumber].difficulty
+        difficultyLabel.text = "Difficulty: \(questions[questionNumber].difficulty.firstUppercased)"
+
     
         setAnswers()
     }
@@ -84,7 +85,7 @@ class QuestionViewController: UIViewController {
                     let fixedQuestion = QuestionController.convertSpecialCharacters(input: questions[self?.questionNumber ?? 0].question)
                     self?.questionLabel.text = fixedQuestion
                     self?.categoryLabel.text = questions[0].category
-                    self?.difficultyLabel.text = questions[0].difficulty
+                    self?.difficultyLabel.text = questions[0].difficulty.firstUppercased
                     self?.setAnswers()
                 }
                 

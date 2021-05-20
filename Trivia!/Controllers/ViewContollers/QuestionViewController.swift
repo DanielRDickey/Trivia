@@ -31,6 +31,7 @@ class QuestionViewController: UIViewController {
     
     var questions: [Question] = []
     var questionNumber = 0
+    var scores = 0
     
     // MARK: - Functions
     
@@ -93,8 +94,7 @@ class QuestionViewController: UIViewController {
     }
     
     func endGame() {
-        //Add end Screen
-        
+        self.presentEndGameAlert()
     }
     
     func setData() {
@@ -117,14 +117,19 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    
     func presentAlert(answer: String) {
         
         let correctAnswer = questions[questionNumber].correct_answer
         let success = answer == correctAnswer
+        if success == true {
+            scores += 1
+        }
         
         let fixedAnswer = QuestionController.convertSpecialCharacters(input: correctAnswer)
         
         let alertController = UIAlertController(title: success ? "Good Job!" : "Wrong Answer.", message: success ? "If you would like to play more, please click continue." : "The corrent answer is \(fixedAnswer)", preferredStyle: .alert)
+
         
         let doneAction = UIAlertAction(title: "Done", style: .cancel)
         let continueAction = UIAlertAction(title: "Continue", style: .default) { [weak self] (_) in
@@ -136,14 +141,32 @@ class QuestionViewController: UIViewController {
         
         present(alertController, animated: true)
     }
+    
+    func presentEndGameAlert() {
+        
+        let alertController = UIAlertController(title: "You Finished the Game!", message: "You scored \(scores)/10.", preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Done", style: .cancel)
+        let newGameAction = UIAlertAction(title: "Start A New Game", style: .default) { (_) in
+            self.setData()
+            self.questionNumber = 0
+            self.scores = 0
+        }
+        
+        
+        
+        alertController.addAction(doneAction)
+        alertController.addAction(newGameAction)
+        
+        present(alertController, animated: true)
+    }
 
     // MARK: - Actions
     
     @IBAction func multipleChoiceButtonTapped(_ sender: Any) {
-        
         guard let answer = (sender as AnyObject).titleLabel?.text else {return}
         presentAlert(answer: answer)
-        
+
     }
 
 }//End of class

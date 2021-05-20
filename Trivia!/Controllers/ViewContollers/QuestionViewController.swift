@@ -18,6 +18,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerButton2: UIButton!
     @IBOutlet weak var answerButton3: UIButton!
     @IBOutlet weak var answerButton4: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     // MARK: - Lifecycle
     
@@ -36,6 +37,7 @@ class QuestionViewController: UIViewController {
     func setNextQuestion() {
         if questionNumber < 9 {
             questionNumber += 1
+            updateProgressBar()
         } else {
             endGame()
             return
@@ -49,6 +51,10 @@ class QuestionViewController: UIViewController {
         setAnswers()
     }
     
+    func updateProgressBar() {
+        progressBar.setProgress(Float(questionNumber) / Float(10), animated: true)
+    }
+    
     func setAnswers() {
         
         var answersArray = questions[questionNumber].incorrect_answers
@@ -60,6 +66,30 @@ class QuestionViewController: UIViewController {
         answerButton2.setTitle(fixedAnswers[1], for: .normal)
         answerButton3.setTitle(fixedAnswers[2], for: .normal)
         answerButton4.setTitle(fixedAnswers[3], for: .normal)
+        
+        updateButtonViews()
+    }
+    
+    func updateButtonViews() {
+        answerButton1.layer.borderWidth = 5.0
+        answerButton1.layer.borderColor = UIColor.black.cgColor
+        answerButton1.backgroundColor = UIColor.black
+        answerButton1.tintColor = UIColor.white
+        
+        answerButton2.layer.borderWidth = 5.0
+        answerButton2.layer.borderColor = UIColor.black.cgColor
+        answerButton2.backgroundColor = UIColor.black
+        answerButton2.tintColor = UIColor.white
+        
+        answerButton3.layer.borderWidth = 5.0
+        answerButton3.layer.borderColor = UIColor.black.cgColor
+        answerButton3.backgroundColor = UIColor.black
+        answerButton3.tintColor = UIColor.white
+        
+        answerButton4.layer.borderWidth = 5.0
+        answerButton4.layer.borderColor = UIColor.black.cgColor
+        answerButton4.backgroundColor = UIColor.black
+        answerButton4.tintColor = UIColor.white
     }
     
     func endGame() {

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DCz-6C-Voj">
-                                <rect key="frame" x="31" y="292" width="352" height="246"/>
+                                <rect key="frame" x="31" y="264" width="352" height="356"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(question)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRm-9a-dx8">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
@@ -37,32 +37,35 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XkE-ad-sGZ">
-                                        <rect key="frame" x="0.0" y="111" width="352" height="135"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XkE-ad-sGZ">
+                                        <rect key="frame" x="0.0" y="111" width="352" height="245"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEa-X2-X9T">
-                                                <rect key="frame" x="0.0" y="0.0" width="352" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="1BB-Lg-4GP"/>
+                                                </constraints>
                                                 <state key="normal" title="(answer 1)"/>
                                                 <connections>
                                                     <action selector="multipleChoiceButtonTapped:" destination="9bV-aD-eSz" eventType="touchUpInside" id="6ve-x9-B3d"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slh-Q3-2uC">
-                                                <rect key="frame" x="0.0" y="35" width="352" height="30"/>
+                                                <rect key="frame" x="0.0" y="65" width="352" height="50"/>
                                                 <state key="normal" title="(answer 2)"/>
                                                 <connections>
                                                     <action selector="multipleChoiceButtonTapped:" destination="9bV-aD-eSz" eventType="touchUpInside" id="SEa-Gc-hfr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIQ-79-nn4">
-                                                <rect key="frame" x="0.0" y="70" width="352" height="30"/>
+                                                <rect key="frame" x="0.0" y="130" width="352" height="50"/>
                                                 <state key="normal" title="(answer 3)"/>
                                                 <connections>
                                                     <action selector="multipleChoiceButtonTapped:" destination="9bV-aD-eSz" eventType="touchUpInside" id="bcx-hR-PHS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-FO-Gal">
-                                                <rect key="frame" x="0.0" y="105" width="352" height="30"/>
+                                                <rect key="frame" x="0.0" y="195" width="352" height="50"/>
                                                 <state key="normal" title="(answer 4)"/>
                                                 <connections>
                                                     <action selector="multipleChoiceButtonTapped:" destination="9bV-aD-eSz" eventType="touchUpInside" id="fW7-T5-ZWq"/>
@@ -76,19 +79,27 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trivia" translatesAutoresizingMaskIntoConstraints="NO" id="pNN-qa-evL">
-                                <rect key="frame" x="0.0" y="122" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="jSh-Fp-jkw"/>
                                 </constraints>
                             </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Crz-0B-2O8">
+                                <rect key="frame" x="16" y="842" width="382" height="4"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CeG-ol-ew9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pNN-qa-evL" firstAttribute="centerX" secondItem="CeG-ol-ew9" secondAttribute="centerX" id="UWT-C9-RoP"/>
                             <constraint firstItem="pNN-qa-evL" firstAttribute="width" secondItem="ef2-TZ-AjW" secondAttribute="width" id="VFc-bx-AaD"/>
-                            <constraint firstItem="pNN-qa-evL" firstAttribute="top" secondItem="CeG-ol-ew9" secondAttribute="top" constant="78" id="eFx-S7-nPn"/>
+                            <constraint firstItem="CeG-ol-ew9" firstAttribute="trailing" secondItem="Crz-0B-2O8" secondAttribute="trailing" constant="16" id="YIT-u1-ktn"/>
+                            <constraint firstItem="Crz-0B-2O8" firstAttribute="centerX" secondItem="ef2-TZ-AjW" secondAttribute="centerX" id="Yrs-gU-LD1"/>
+                            <constraint firstItem="pNN-qa-evL" firstAttribute="top" secondItem="CeG-ol-ew9" secondAttribute="top" constant="50" id="eFx-S7-nPn"/>
                             <constraint firstItem="DCz-6C-Voj" firstAttribute="top" secondItem="pNN-qa-evL" secondAttribute="bottom" constant="30" id="fP9-Ed-XXY"/>
+                            <constraint firstItem="CeG-ol-ew9" firstAttribute="bottom" secondItem="Crz-0B-2O8" secondAttribute="bottom" constant="16" id="k89-Gf-Uqr"/>
+                            <constraint firstItem="Crz-0B-2O8" firstAttribute="leading" secondItem="CeG-ol-ew9" secondAttribute="leading" constant="16" id="rMT-Cz-AE1"/>
                             <constraint firstItem="DCz-6C-Voj" firstAttribute="centerX" secondItem="CeG-ol-ew9" secondAttribute="centerX" id="xJ9-Ja-rz7"/>
                             <constraint firstItem="DCz-6C-Voj" firstAttribute="width" secondItem="ef2-TZ-AjW" secondAttribute="width" multiplier="0.85" id="y4l-aJ-349"/>
                         </constraints>
@@ -100,6 +111,7 @@
                         <outlet property="answerButton4" destination="7x5-FO-Gal" id="WUN-Ss-91F"/>
                         <outlet property="categoryLabel" destination="T93-ns-OwL" id="Fux-Au-ugN"/>
                         <outlet property="difficultyLabel" destination="vbe-Nu-KpV" id="67H-s3-5la"/>
+                        <outlet property="progressBar" destination="Crz-0B-2O8" id="5xh-c7-VfD"/>
                         <outlet property="questionLabel" destination="dRm-9a-dx8" id="4CN-zv-4dX"/>
                     </connections>
                 </viewController>

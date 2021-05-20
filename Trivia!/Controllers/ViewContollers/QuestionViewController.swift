@@ -30,6 +30,7 @@ class QuestionViewController: UIViewController {
     
     var questions: [Question] = []
     var questionNumber = 0
+    var userScore = 0
     
     // MARK: - Functions
     
@@ -63,7 +64,11 @@ class QuestionViewController: UIViewController {
     }
     
     func endGame() {
-        //Add end Screen and restart game
+        //Add end Screen
+        
+        questionNumber = 0
+        userScore = 0
+        setData()
     }
     
     func setData() {
@@ -91,11 +96,17 @@ class QuestionViewController: UIViewController {
         let correctAnswer = questions[questionNumber].correct_answer
         let success = answer == correctAnswer
         
-        let alertController = UIAlertController(title: success ? "Good Job!" : "Wrong Answer.", message: success ? "If you would like to play more, please click continue." : "The corrent answer is \(correctAnswer)", preferredStyle: .alert)
+        if success {
+            userScore += 1
+        }
+        
+        let fixedAnswer = QuestionController.convertSpecialCharacters(input: correctAnswer)
+        
+        let alertController = UIAlertController(title: success ? "Good Job!" : "Wrong Answer.", message: success ? "If you would like to play more, please click continue." : "The corrent answer is \(fixedAnswer)", preferredStyle: .alert)
         
         let doneAction = UIAlertAction(title: "Done", style: .cancel)
-        let continueAction = UIAlertAction(title: "Continue", style: .default) { (_) in
-            self.setNextQuestion()
+        let continueAction = UIAlertAction(title: "Continue", style: .default) { [weak self] (_) in
+            self?.setNextQuestion()
         }
         
         alertController.addAction(doneAction)
@@ -111,7 +122,6 @@ class QuestionViewController: UIViewController {
         guard let answer = (sender as AnyObject).titleLabel?.text else {return}
         presentAlert(answer: answer)
         
-//        setNextQuestion()
     }
 
 }//End of class

@@ -86,6 +86,7 @@
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Crz-0B-2O8">
                                 <rect key="frame" x="16" y="842" width="382" height="4"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CeG-ol-ew9"/>

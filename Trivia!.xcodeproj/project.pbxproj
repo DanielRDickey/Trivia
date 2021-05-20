@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A24C986A2655ACB900B1FD16 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24C98692655ACB900B1FD16 /* QuestionViewController.swift */; };
-		6129C0FE2655AE8B00CC1A44 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129C0FD2655AE8B00CC1A44 /* AlertController.swift */; };
 		A2DE798E26558CC5003AFF86 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE798D26558CC5003AFF86 /* Question.swift */; };
 		BAD859802655819400B9FD2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD8597F2655819400B9FD2A /* AppDelegate.swift */; };
 		BAD859822655819400B9FD2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD859812655819400B9FD2A /* SceneDelegate.swift */; };
@@ -21,7 +20,6 @@
 
 /* Begin PBXFileReference section */
 		A24C98692655ACB900B1FD16 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		6129C0FD2655AE8B00CC1A44 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		A2DE798D26558CC5003AFF86 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		BAD8597C2655819400B9FD2A /* Trivia!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trivia!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD8597F2655819400B9FD2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				BAD859A7265590AA00B9FD2A /* NetworkError.swift */,
-				6129C0FD2655AE8B00CC1A44 /* AlertController.swift */,
 			);
 			path = "Helper and Extension";
 			sourceTree = "<group>";
@@ -217,7 +214,6 @@
 				BAD859A526558F2800B9FD2A /* QuestionController.swift in Sources */,
 				A24C986A2655ACB900B1FD16 /* QuestionViewController.swift in Sources */,
 				BAD859A8265590AA00B9FD2A /* NetworkError.swift in Sources */,
-				6129C0FE2655AE8B00CC1A44 /* AlertController.swift in Sources */,
 				BAD859802655819400B9FD2A /* AppDelegate.swift in Sources */,
 				BAD859822655819400B9FD2A /* SceneDelegate.swift in Sources */,
 			);

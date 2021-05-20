@@ -66,7 +66,8 @@ class QuestionController {
                 "&eecute;" : "é",
                 "&uuml;" : "ú",
                 "&ldquo;" : "'",
-                "&rdquo;" : "'"
+                "&rdquo;" : "'",
+                "&eacute;": "é"
                 
             ]
             for (escapedCharacter, unescapedCharacter) in characterDictionary {
